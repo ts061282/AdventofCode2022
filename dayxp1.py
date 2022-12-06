@@ -1,4 +1,4 @@
-input = open("OneDrive\\Documents\\input.txt")
+input = open("input.txt")
 
 solution = 0
 
