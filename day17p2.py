@@ -130,8 +130,6 @@ def addRockToChamber(chamber,rock,coords):
 rockCount = 0
 rocksToAdd = 1000000000000
 culledChamberRows = 0
-avgRowsPerRock = 0
-avgCheck = 0
 while (rockCount < rocksToAdd):
     rockCount += 1
     rock = getNextRock()
@@ -142,12 +140,10 @@ while (rockCount < rocksToAdd):
         pass #userInput = input("press any key...")
     # userInput = input("press any key...")
     chamber = addRockToChamber(chamber,rock,coords)
-    if len(chamber) > 20:
-        culledChamberRows += 10
-        chamber = chamber[10:]
+    if len(chamber) > 200:
+        culledChamberRows += 100
+        chamber = chamber[100:]
         avgRowsPerRock = culledChamberRows / rockCount
-        if culledChamberRows % 10000 == 0: print(avgRowsPerRock)
-
 
 for line in range(len(chamber)-1,-1,-1):
     if '#' in chamber[line]:
